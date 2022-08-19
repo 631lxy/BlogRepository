@@ -1,0 +1,49 @@
+h1 {
+    text-align: center;
+    font-family: 'Alumni Sans Collegiate One', sans-serif;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Alumni Sans Collegiate One';
+    background-image: url(https://www.toptal.com/designers/subtlepatterns/uploads/swirl_pattern.png);
+}
+
+#button {
+    color: rgb(44, 101, 106);
+    height: 40px;
+    width: 170px;
+    background-color: rgba(100, 237, 139, 0.152);
+}
+
+label {
+    color: rgba(8, 12, 13, 0.634);
+}
+
+
+
+/* h1 {
+    color: rgba(197, 168, 106, 0.742);
+    text-shadow: 0 0 10px;
+    letter-spacing: 1px;
+    text-align: center;
+} */
+
+div#box {
+    height: 300px;
+    width: 400px;
+    padding: 150px;
+    border: 0;
+    margin: auto;
+    position: relative;
+}
+
+form {
+    height: 150px;
+    width: 150px;
+    padding: 40px;
+    border: 0;
+    margin: auto;
+    position: relative;
+}
