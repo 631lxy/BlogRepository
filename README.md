@@ -2,7 +2,7 @@
 |日付|作業内容|
 |--|--|
 |0818|設計図作成|
-|0819|設計図改修|loginPageとregisterPageの基本作成|
+|0819|設計図改修，loginPageとregisterPageの基本作成|
 
 ## ユースケース図
 ![ユースケース図](drawio/useCase.png)
