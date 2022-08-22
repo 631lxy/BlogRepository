@@ -1,49 +1,36 @@
-h1 {
-    text-align: center;
-    font-family: 'Alumni Sans Collegiate One', sans-serif;
+.box {
+    background-image: url(https://www.toptal.com/designers/subtlepatterns/uploads/swirl_pattern.png);
+    border-style: ridge;
+    border-width: 4px;
+    border-color: aquamarine;
+    border-radius: 45px;
+    height: 350px;
+    width: 500px;
+    margin: auto;
+    margin-top: 150px;
+    position: relative;
 }
 
-body {
-    margin: 0;
-    padding: 0;
-    font-family: 'Alumni Sans Collegiate One';
-    background-image: url(https://www.toptal.com/designers/subtlepatterns/uploads/swirl_pattern.png);
+h1 {
+    text-align: center;
+}
+
+.inputBox {
+    height: 300px;
+    width: 300px;
+    margin: auto;
+    position: relative;
 }
 
 #button {
-    color: rgb(44, 101, 106);
-    height: 40px;
-    width: 170px;
-    background-color: rgba(100, 237, 139, 0.152);
+    color: rgb(40, 193, 207);
+    height: 35px;
+    width: 160px;
+    background-color: rgba(237, 216, 100, 0.152);
+    margin: auto;
+    position: absolute;
 }
 
 label {
-    color: rgba(8, 12, 13, 0.634);
-}
-
-
-
-/* h1 {
-    color: rgba(197, 168, 106, 0.742);
-    text-shadow: 0 0 10px;
-    letter-spacing: 1px;
-    text-align: center;
-} */
-
-div#box {
-    height: 300px;
-    width: 400px;
-    padding: 150px;
-    border: 0;
-    margin: auto;
-    position: relative;
-}
-
-form {
-    height: 150px;
-    width: 150px;
-    padding: 40px;
-    border: 0;
-    margin: auto;
-    position: relative;
+    color: rgba(66, 73, 72, 0.634);
 }

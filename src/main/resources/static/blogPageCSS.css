@@ -1,0 +1,30 @@
+* {
+    margin: 0%;
+    padding: 0%;
+}
+
+.text1 {
+    height: 50px;
+    width: 1100px;
+    margin: auto;
+}
+
+.text2 {
+    height: 400px;
+    width: 1100px;
+    margin: auto;
+    margin-top: 50px;
+}
+
+.timer{
+    height: 40px;
+    width: 200px;
+    margin: auto;
+    margin-right: 220px;
+}
+
+.button{
+    height: 40px;
+    width: 200px;
+    margin: auto;
+}

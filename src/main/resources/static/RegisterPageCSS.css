@@ -1,0 +1,39 @@
+body {
+    background-image:url(http://hbimg.b0.upaiyun.com/6261058343767cc53b0e771017f31fcfc8418fda16c87-RZLKnj_fw658);
+}
+
+.box {
+    background-image: url(https://www.toptal.com/designers/subtlepatterns/uploads/swirl_pattern.png);
+    border-style: ridge;
+    border-width: 4px;
+    border-color: aquamarine;
+    border-radius: 45px;
+    height: 650px;
+    width: 900px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: fixed;
+}
+
+.box1 {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+}
+
+.text {
+    border-style: ridge;
+    border-width 2px;
+    border-radius: 20px;
+}
+
+#button {
+    height: 35px;
+    width: 150px;
+    border-style: ridge;
+    border-width 2px;
+    border-radius: 20px;
+    background-color: aquamarine;
+}
