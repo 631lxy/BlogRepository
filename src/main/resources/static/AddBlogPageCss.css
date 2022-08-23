@@ -1,0 +1,36 @@
+body{
+background:url(https://images.unsplash.com/photo-1450849608880-6f787542c88a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1421&q=80);
+background-size: contain;
+}
+
+.title {
+    height: 50px;
+    width: 1100px;
+    margin: auto;
+    margin-top: 20px;
+}
+.content {
+    height: 450px;
+    width: 1100px;
+    margin: auto;
+    margin-top: 50px;
+}
+
+.form-control{
+    opacity: 35%;
+    border-radius: 20px;
+}
+.form-control:focus{
+    opacity: 80%;
+}
+
+.button{
+    height: 40px;
+    width: 200px;
+    margin: auto;
+}
+
+label{
+    color: aliceblue;
+}
+

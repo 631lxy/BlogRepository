@@ -1,0 +1,21 @@
+body{
+    background-color: rgba(159, 151, 151, 0.7);
+}
+
+.title{
+    height: 50px;
+    width: 800px;
+    margin: auto;
+}
+
+.content{
+    height: 500px;
+    width: 800px;
+    margin: auto;
+}
+
+.button{
+    height: 50px;
+    width: 310px;
+    margin: auto;
+}

@@ -1,14 +1,19 @@
 .box {
-    background-image: url(https://www.toptal.com/designers/subtlepatterns/uploads/swirl_pattern.png);
+    opacity: 90%;
     border-style: ridge;
     border-width: 4px;
     border-color: aquamarine;
     border-radius: 45px;
-    height: 350px;
+    height: 300px;
     width: 500px;
     margin: auto;
     margin-top: 150px;
     position: relative;
+}
+
+body{
+    background-image: url(https://cdn.pixabay.com/photo/2014/12/27/16/38/planet-581239_960_720.jpg);
+    background-size:cover;
 }
 
 h1 {
@@ -26,11 +31,11 @@ h1 {
     color: rgb(40, 193, 207);
     height: 35px;
     width: 160px;
-    background-color: rgba(237, 216, 100, 0.152);
+    background-color: rgba(255, 253, 253, 0.152);
     margin: auto;
-    position: absolute;
+    margin-top: 10px;
+    display: block;
 }
-
-label {
-    color: rgba(66, 73, 72, 0.634);
+p{
+    color: rgb(255, 255, 255);
 }

@@ -1,30 +1,14 @@
-* {
-    margin: 0%;
-    padding: 0%;
+.navbar {
+    background-image: url(https://photo.16pic.com/00/93/24/16pic_9324807_b.jpg);
 }
 
-.text1 {
-    height: 50px;
-    width: 1100px;
-    margin: auto;
-}
-
-.text2 {
-    height: 400px;
-    width: 1100px;
-    margin: auto;
-    margin-top: 50px;
-}
-
-.timer{
-    height: 40px;
+.button {
     width: 200px;
     margin: auto;
-    margin-right: 220px;
 }
 
-.button{
-    height: 40px;
-    width: 200px;
+.blogList {
+    width: 800px;
+    height: 600px;
     margin: auto;
 }
