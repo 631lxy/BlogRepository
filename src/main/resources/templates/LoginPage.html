@@ -1,35 +1,35 @@
 <!DOCTYPE html>
 
 <head>
-    <meta charset="utf-8">
-    <title>loginPage</title>
-    <link rel="stylesheet"
-        href="C:\Users\92463\Desktop\MyBlogPG\BlogRepository\src\main\resources\static\LoginPageCSS.css">
+	<meta charset="utf-8">
+	<title>loginPage</title>
+	<link rel="stylesheet" href="LoginPageCss.css">
 </head>
 
 <body>
-    <div class="box">
-        <form action="/login" method="post">
-            <div class="inputBox">
-                <h1>LoginMyBlog</h1>
-                <label for="name">Username:</label>
-                <input id="name" type="text" name="username" placeholder="please enter username">
-                <br>
-                <br>
-                <label for="password">Password:</label>
-                <input id="password" type="password" name="password" placeholder="please enter password">
-                <br>
-                <br>
-                <input type="submit" id="button" value="login">
-                <br>
-                <br>
-                <p>Don't have an account?
-                    <a href="RegisterPage.html">
-                        Star Register.</a>
-                </p>
-            </div>
-        </form>
-    </div>
+	<div class="box">
+
+		<form action="/login" method="post">
+			<div class="inputBox">
+				<h1>LoginMyBlog</h1>
+				<label for="name">Username:</label>
+				<input id="name" type="text" name="username" placeholder="please enter username">
+				<br>
+				<br>
+				<label for="password">Password:</label>
+				<input id="password" type="password" name="password" placeholder="please enter password">
+				<br>
+				<br>
+				<input type="submit" id="button" value="login">
+				<br>
+				<p th:if="${passwordNotMatch}">Wrong Password</p>
+				<p>Don't have an account?
+					<a th:href="@{/register}">
+						Start Register.</a>
+				</p>
+			</div>
+		</form>
+	</div>
 </body>
 
 </html>

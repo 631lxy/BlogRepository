@@ -23,4 +23,13 @@ public class AccountService {
 			}
 		}
 	}
+
+	public boolean createAccount(String username, String password) {
+		if (repository.findByUsername(username) == null) {
+			repository.save(new Account(username, password));
+			return true;
+		} else {
+			return false;
+		}
+	}
 }

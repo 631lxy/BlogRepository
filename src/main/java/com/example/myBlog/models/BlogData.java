@@ -5,8 +5,6 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToMany;
 
 @Entity
 public class BlogData {
@@ -19,14 +17,17 @@ public class BlogData {
 
 	@Column
 	private String content;
+	
+	private Account account;
 
 	public BlogData() {
 
 	}
-
-	public BlogData(String title, String content) {
+	
+	public BlogData(String title, String content, Account account) {
 		this.title = title;
 		this.content = content;
+		this.account = account;
 	}
 
 	public Long getId() {

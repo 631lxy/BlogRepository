@@ -11,25 +11,42 @@ import com.example.myBlog.services.AccountService;
 
 @Controller
 public class AccountController {
+	@Autowired
+	AccountService accountService;
+
 	@GetMapping("/login")
 	public String getLoginPage() {
 		return "LoginPage.html";
 	}
 
-	@Autowired
-	AccountService accountService;
-
-	@PostMapping("/myBlog")
+	@PostMapping("/login")
 	public ModelAndView login(@RequestParam String username, @RequestParam String password, ModelAndView mav) {
 		mav.addObject("username", username);
-		mav.addObject("isLogin", false);
-		if (username.equals("admin") && password.equals("123456")) {
+		mav.addObject("passwordNotMatch", false);
+		if (accountService.validateAccount(username, password)) {
 			mav.setViewName("BlogPage.html");
 			return mav;
 		} else {
-			mav.addObject("isLogin", true);
+			mav.addObject("passwordNotMatch", true);
 			mav.setViewName("LoginPage.html");
 			return mav;
 		}
+	}
+
+	@GetMapping("/register")
+	public String GetRegisterPage() {
+		return "RegisterPage.html";
+	}
+
+	@PostMapping("/register")
+	public ModelAndView register(@RequestParam String username, @RequestParam String password, ModelAndView mav) {
+		mav.addObject("registerNotSuccess", false);
+		if (accountService.createAccount(username, password)) {
+			mav.setViewName("LoginPage.html");
+		} else {
+			mav.addObject("registerNotSuccess", true);
+			mav.setViewName("RegisterPage.html");
+		}
+		return mav;
 	}
 }
