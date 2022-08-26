@@ -17,13 +17,13 @@ public class BlogData {
 
 	@Column
 	private String content;
-	
+
 	private Account account;
 
 	public BlogData() {
 
 	}
-	
+
 	public BlogData(String title, String content, Account account) {
 		this.title = title;
 		this.content = content;
@@ -53,4 +53,13 @@ public class BlogData {
 	public void setContent(String content) {
 		this.content = content;
 	}
+
+	public Account getAccount() {
+		return account;
+	}
+
+	public void setAccount(Account account) {
+		this.account = account;
+	}
+
 }

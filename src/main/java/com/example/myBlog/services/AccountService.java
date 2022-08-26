@@ -1,5 +1,7 @@
 package com.example.myBlog.services;
 
+import java.util.Map;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -31,5 +33,17 @@ public class AccountService {
 		} else {
 			return false;
 		}
+	}
+
+	public Account findByUsername(String username) {
+		return repository.findByUsername(username);
+	}
+
+	public Map<String, String> userIterator() {
+		Map<String, String> resultMap = new HashMap<>();
+		for (Account element : repository.findAll()) {
+			resultMap.put(element.getUsername(), element.getPassword());
+		}
+		return resultMap;
 	}
 }

@@ -12,22 +12,24 @@
 </head>
 
 <body>
+<form action="/addBlog" method="post">
     <div class="title">
         <label for="blogTitle">Blog Title</label>
-        <textarea class="form-control" id="exampleFormControlTextarea1" rows="1"></textarea>
+        <textarea name="title" class="form-control" id="blogTitle" rows="1"></textarea>
     </div>
 
     <div class="content">
         <label for="blogTxt">Blog Content</label>
-        <textarea class="form-control" id="exampleFormControlTextarea1" rows="17"></textarea>
+        <textarea name="content" class="form-control" id="blogContent" rows="17"></textarea>
     </div>
     <br>
     <br>
    
     <div class="button">
-        <button type="button" class="btn btn-primary btn-lg">Submit</button>
-        <button type="button" class="btn btn-secondary btn-lg">Cancel</button>
+        <button type="submit" class="btn btn-primary btn-lg">Submit</button>
+        <button type="reset" class="btn btn-secondary btn-lg">Cancel</button>
     </div>
+</form>
 </body>
 
 </html>

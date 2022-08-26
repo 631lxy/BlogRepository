@@ -23,7 +23,7 @@ public class Account {
 	private String password;
 
 	@OneToMany
-	@JoinColumn(name = "blogs", referencedColumnName = "account")
+	@JoinColumn(name = "writer", referencedColumnName = "username")
 	private List<BlogData> blogs;
 
 	public Account() {
