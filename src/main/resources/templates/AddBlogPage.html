@@ -8,11 +8,11 @@
     <title>AddBlogPage</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
         integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
-    <link rel="stylesheet" href="../static/AddBlogPageCss.css">
+    <link rel="stylesheet" th:href="@{/CSS/AddBlogPageCss.css}">
 </head>
 
 <body>
-<form action="/addBlog" method="post">
+<form th:action ="@{/addBlog}" method="post">
     <div class="title">
         <label for="blogTitle">Blog Title</label>
         <textarea name="title" class="form-control" id="blogTitle" rows="1"></textarea>

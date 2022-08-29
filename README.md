@@ -8,6 +8,7 @@
 |0824|Account部分MVC構築、データベースと接続|
 |0825|Account部分重複入力パスワード一致判断機能追加，Blog部MVC構築|
 |0826|追加Blog機能、セキュリティの導入|
+|0829|検索Blog機能の追加、BlogPageで自分持ちのblogsを展示機能|
 
 ## ユースケース図
 ![ユースケース図](drawio/useCase.png)

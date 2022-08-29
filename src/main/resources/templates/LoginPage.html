@@ -3,13 +3,13 @@
 <head>
 	<meta charset="utf-8">
 	<title>loginPage</title>
-	<link rel="stylesheet" href="LoginPageCss.css">
+	<link rel="stylesheet" th:href="@{/CSS/LoginPageCss.css}">
 </head>
 
 <body>
 	<div class="box">
 
-		<form action="/login" method="post">
+		<form th:action ="@{/login}" method="post">
 			<div class="inputBox">
 				<h1>LoginMyBlog</h1>
 				<label for="name">Username:</label>

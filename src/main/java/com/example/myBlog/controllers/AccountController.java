@@ -1,5 +1,6 @@
 package com.example.myBlog.controllers;
 
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -48,5 +49,10 @@ public class AccountController {
 			mav.setViewName("RegisterPage.html");
 		}
 		return mav;
+	}
+
+	@GetMapping("/")
+	public String index() {
+		return "redirect:/blogPage";
 	}
 }

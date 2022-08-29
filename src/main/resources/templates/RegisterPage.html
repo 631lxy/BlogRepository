@@ -9,7 +9,7 @@
 			text-align: center;
 		}
 	</style>
-	<link rel="stylesheet" href="RegisterPageCss.css">
+	<link rel="stylesheet" th:href="@{/CSS/RegisterPageCss.css}">
 	<script>
 		function validate() {
 			var n1 = document.getElementById("Password");
@@ -33,7 +33,7 @@
 			<p>Please fill in this form to create an account</p>
 			<hr>
 
-			<form onsubmit="return validate()" action="/register" method="post">
+			<form onsubmit="validate()" th:action ="@{/register}" method="post">
 				<label for="UserName"><b>Username:</b></label>
 				<br>
 				<input class="text" id="UserName" type="text" name="username" placeholder="Enter UserName">

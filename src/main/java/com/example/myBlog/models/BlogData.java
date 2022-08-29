@@ -5,6 +5,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 
 @Entity
 public class BlogData {
@@ -18,6 +20,8 @@ public class BlogData {
 	@Column
 	private String content;
 
+	@ManyToOne
+	@JoinColumn(name = "account_id", referencedColumnName = "id")
 	private Account account;
 
 	public BlogData() {

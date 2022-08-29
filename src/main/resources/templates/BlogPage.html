@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <title>BlogPage</title>
-    <link rel="stylesheet" href="../static/BlogPageCss.css">
+    <link rel="stylesheet" th:href="@{/CSS/BlogPageCss.css}">
     <!-- BootStrap导入 -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
         integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
@@ -20,54 +20,37 @@
             <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
         </form>
     </nav>
+    
+        <div class="blogList">
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th scope="col">Title</th>
+                        <th scope="col">operation</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <div th:each="blog : ${blogs}">
+                        <tr>
+                            <td th:text="${blog.title}"> </td>
+                            <td>
+                            	<form th:action="@{/searchBlogPage}" method="post">
+                                <input id="submit" type="submit" value="exhibit">
+                                <input id="submit2" type="hidden" name="id" th:value="${blog.id}">
+                            	</form>
+                        	</td>
+                        </tr>
+                    </div>
+                </tbody>
+            </table>
+        </div>
 
-    <div class="blogList">
-        <table class="table table-hover">
-            <thead>
-                <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">Blog</th>
-                    <th scope="col">LastEditTime</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <th scope="row">1</th>
-                    <td>Mark</td>
-                    <td>2020-8-20</td>
-                </tr>
-
-                <tr>
-                    <th scope="row">2</th>
-                    <td>Jacob</td>
-                    <td>2020-8-20</td>
-                </tr>
-
-                <tr>
-                    <th scope="row">3</th>
-                    <td>blog3</td>
-                    <td>2020-8-20</td>
-                </tr>
-
-                <tr>
-                    <th scope="row">4</th>
-                    <td>blog4</td>
-                    <td>2020-8-20</td>
-                </tr>
-
-                <tr>
-                    <th scope="row">5</th>
-                    <td>blog5</td>
-                    <td>2020-8-20</td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-
-    <div class="button">
-        <input id="submit1" type="button" value="Sing out">
-    </div>
-
+        <div class="button">
+        	<form th:action="@{/login}" method="post">
+            	<input id="submit1" type="submit" value="Sign out">
+       		</form>
+        </div>
+    
 </body>
 
 </html>

@@ -1,14 +1,11 @@
 package com.example.myBlog.models;
 
-import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToMany;
 
 @Entity
 public class Account {
@@ -21,10 +18,6 @@ public class Account {
 
 	@Column
 	private String password;
-
-	@OneToMany
-	@JoinColumn(name = "writer", referencedColumnName = "username")
-	private List<BlogData> blogs;
 
 	public Account() {
 

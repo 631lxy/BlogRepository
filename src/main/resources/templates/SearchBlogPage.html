@@ -3,18 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <title>SearchBlogPage</title>
-    <link rel="stylesheet" href="../static/SearchBlogPageCss.css">
+    <link rel="stylesheet" th:href="@{/CSS/SearchBlogPageCss.css}">
 </head>
 
 <body>
     <div class="title">
         <label for="blogTitle">Title:</label>
-        <span>123456</span>
+        <p th:text="${blog.title}"></p>
     </div>
 
     <div class="content">
         <label for="blogTxt">Content:</label>
-        <span>123456</span>
+        <p th:text="${blog.content}"></p>
     </div>
    
     <div class="button">
