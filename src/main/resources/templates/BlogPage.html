@@ -20,37 +20,40 @@
             <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
         </form>
     </nav>
-    
-        <div class="blogList">
-            <table class="table table-hover">
-                <thead>
+
+    <div class="blogList">
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th scope="col">Title</th>
+                    <th scope="col">operation</th>
+                </tr>
+            </thead>
+            <tbody>
+                <div th:each="blog : ${blogs}">
                     <tr>
-                        <th scope="col">Title</th>
-                        <th scope="col">operation</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <div th:each="blog : ${blogs}">
-                        <tr>
-                            <td th:text="${blog.title}"> </td>
-                            <td>
-                            	<form th:action="@{/searchBlogPage}" method="post">
+                        <td th:text="${blog.title}"> </td>
+                        <td>
+                            <form th:action="@{/searchBlogPage}" method="post">
                                 <input id="submit" type="submit" value="exhibit">
                                 <input id="submit2" type="hidden" name="id" th:value="${blog.id}">
-                            	</form>
-                        	</td>
-                        </tr>
-                    </div>
-                </tbody>
-            </table>
-        </div>
+                            </form>
+                        </td>
+                    </tr>
+                </div>
+            </tbody>
+        </table>
+    </div>
 
-        <div class="button">
-        	<form th:action="@{/login}" method="post">
-            	<input id="submit1" type="submit" value="Sign out">
-       		</form>
-        </div>
-    
+    <div class="button">
+        <form th:action="@{/addBlogPage}" method="get">
+            <input id="submit1" type="submit" value="Add blog">
+        </form>
+        <form th:action="@{/login}" method="post">
+            <input id="submit1" type="submit" value="Sign Out ">
+        </form>
+    </div>
+
 </body>
 
 </html>

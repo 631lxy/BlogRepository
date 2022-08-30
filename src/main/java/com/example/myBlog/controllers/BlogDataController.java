@@ -34,18 +34,20 @@ public class BlogDataController {
 	}
 
 	// 进入添加博客页面
-	@GetMapping("/addBlog")
+	@GetMapping("/addBlogPage")
 	public String getAddBlogPage() {
 		return "AddBlogPage.html";
 	}
 
 	// 追加博客请求
-	@PostMapping("/addBlog")
+	@PostMapping("/addBlogPage")
 	public ModelAndView addBlog(@RequestParam String title, @RequestParam String content,
 			@AuthenticationPrincipal UserDetails user, ModelAndView mav) {
 		Account account = accountService.findByUsername(user.getUsername());
 		if (blogDataService.creatBlog(title, content, account)) {
 			mav.setViewName("BlogPage.html");
+			List<BlogData> blogs = blogDataService.findBlogsByUser(account);
+			mav.addObject("blogs", blogs);
 			return mav;
 		} else {
 			mav.setViewName("AddBlogPage.html");
@@ -63,22 +65,38 @@ public class BlogDataController {
 	}
 
 	// 删除博客请求
-	@PostMapping("/searchBlogPage")
-	public ModelAndView deleteBlog(ModelAndView mav,@RequestParam Long id) {
-		BlogData blog = blogDataService.findById(id);
+	@PostMapping("/deleteBlogPage")
+	public ModelAndView deleteBlog(ModelAndView mav, @RequestParam Long id, @AuthenticationPrincipal UserDetails user) {
+		blogDataService.findById(id);
 		blogDataService.deleteById(id);
-		mav.addObject("blog", blog);
+		//列表形式展示
+		Account account = accountService.findByUsername(user.getUsername());
+		List<BlogData> blogs = blogDataService.findBlogsByUser(account);
+		mav.addObject("blogs", blogs);
 		mav.setViewName("BlogPage.html");
 		return mav;
 	}
-//
-//	// 修改（编辑）博客请求
-//	@PostMapping("/searchBlogPage")
-//	public ModelAndView editBlog(@RequestParam String title, @RequestParam String content, @RequestParam Long id,
-//			ModelAndView mav) {
-//		BlogData blog = blogDataService.findById(id);
-//		blogDataService.updateBlogById(id);
-//		mav.setViewName("BlogPage.html");
-//		return mav;
-//	}
+
+	//进入编辑博客页面
+	@GetMapping("/editBlogPage")
+	public ModelAndView getEditBlogPage(@RequestParam Long id, ModelAndView mav) {
+		BlogData blog = blogDataService.findById(id);
+		mav.addObject("blog", blog);
+		mav.setViewName("EditBlogPage.html");
+		return mav;
+	}
+
+	// 修改（编辑）博客请求
+	@PostMapping("/editBlogPage")
+	public ModelAndView editBlog(@RequestParam String title, @RequestParam String content, @RequestParam Long id,
+			@AuthenticationPrincipal UserDetails user, ModelAndView mav) {
+		Account account = accountService.findByUsername(user.getUsername());
+		BlogData blog = blogDataService.findById(id);
+		blogDataService.updateBlogById(id, title, content, account);
+		mav.addObject("blog", blog);
+		List<BlogData> blogs = blogDataService.findBlogsByUser(account);
+		mav.addObject("blogs", blogs);
+		mav.setViewName("BlogPage.html");
+		return mav;
+	}
 }

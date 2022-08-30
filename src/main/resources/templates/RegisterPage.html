@@ -11,16 +11,13 @@
 	</style>
 	<link rel="stylesheet" th:href="@{/CSS/RegisterPageCss.css}">
 	<script>
-		function validate() {
-			var n1 = document.getElementById("Password");
-			var n2 = document.getElementById("RepeatPassword");
-			if (n1.value != "" && n2.value != "") {
-				if (n1.value != n2.value) {
-					alert("RepeatPassword does not match");
-					return false;
-				}else{
-				return true;
-			}
+		function onChange() {
+			const password = document.querySelector('input[name=password]');
+			const confirm = document.querySelector('input[name=repeatPassword]');
+			if (confirm.value === password.value) {
+				confirm.setCustomValidity('');
+			} else {
+				confirm.setCustomValidity('Passwords do not match');
 			}
 		}
 	</script>
@@ -33,21 +30,22 @@
 			<p>Please fill in this form to create an account</p>
 			<hr>
 
-			<form onsubmit="validate()" th:action ="@{/register}" method="post">
+			<form th:action="@{/register}" method="post">
 				<label for="UserName"><b>Username:</b></label>
 				<br>
-				<input class="text" id="UserName" type="text" name="username" placeholder="Enter UserName">
+				<input required class="text" id="UserName" type="text" name="username" placeholder="Enter UserName">
 				<p th:if="${registerNotSuccess}"> Username already exists </p>
 				<br>
 				<label for="Password"><b>Password:</b></label>
 				<br>
-				<input class="text" id="Password" type="password" name="password" placeholder="Enter Password">
+				<input required onChange="onChange()" class="text" id="Password" type="password" name="password"
+					placeholder="Enter Password">
 				<br>
 				<br>
 				<label for="Password"><b>Repeat Password:</b></label>
 				<br>
-				<input class="text" id="RepeatPassword" type="password" name="repeat Password"
-					placeholder="Repeat Password">
+				<input required onChange="onChange()" class="text" id="RepeatPassword" type="password"
+					name="repeatPassword" placeholder="Repeat Password">
 				<br>
 				<br>
 				<hr>

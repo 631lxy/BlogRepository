@@ -2,14 +2,14 @@
 
 <head>
 	<meta charset="utf-8">
-	<title>loginPage</title>
+	<title>LoginPage</title>
 	<link rel="stylesheet" th:href="@{/CSS/LoginPageCss.css}">
 </head>
 
 <body>
 	<div class="box">
 
-		<form th:action ="@{/login}" method="post">
+		<form th:action="@{/login}" method="post">
 			<div class="inputBox">
 				<h1>LoginMyBlog</h1>
 				<label for="name">Username:</label>
@@ -22,7 +22,7 @@
 				<br>
 				<input type="submit" id="button" value="login">
 				<br>
-				<p th:if="${passwordNotMatch}">Wrong Password</p>
+				<p th:if="${param.error}">Wrong Password</p>
 				<p>Don't have an account?
 					<a th:href="@{/register}">
 						Start Register.</a>
